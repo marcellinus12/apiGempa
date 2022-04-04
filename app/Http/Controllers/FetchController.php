@@ -33,9 +33,9 @@ class FetchController extends Controller
         ]);
     }
 
-    public function getDataByKota($kota)
+    public function getDataByKota($kota, $provinsi)
     {
-        $data = Http::get('https://cuaca-gempa-rest-api.vercel.app/quake/' . $kota);
+        $data = Http::get('https://cuaca-gempa-rest-api.vercel.app/quake/'. $provinsi. '/' . $kota);
 
         return response()->json([
             'code' => 200,
